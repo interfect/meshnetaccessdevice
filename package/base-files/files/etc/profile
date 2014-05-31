@@ -15,7 +15,7 @@ export PS1='\u@\h:\w\$ '
 [ -x /usr/bin/ldd ] || ldd() { LD_TRACE_LOADED_OBJECTS=1 $*; }
 
 # Display meshnet address
-printf "                    ╔════Your Meshnet IPv6 Address══════╗\n"
+printf "                    ╔═════Your Meshnet IPv6 Address═════╗\n"
 printf "                    ║"
 uci get cjdns.cjdns.ipv6 | xargs echo -n
                                                         printf "║\n"
