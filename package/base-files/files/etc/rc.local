@@ -1,4 +1,9 @@
 # Put your custom commands here that should be executed once
 # the system init finished. By default this file does nothing.
 
+# Set up IPv6 NAT for Hyperboria
+ip6tables -t nat -A POSTROUTING -o tun0 -j MASQUERADE
+ip6tables -A FORWARD -i tun0 -o eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+
 exit 0
